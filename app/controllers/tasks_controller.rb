@@ -3,7 +3,7 @@ class TasksController < ApplicationController
 
   
   def index
-    @tasks = Task.all
+    @pagy, @tasks = pagy(Task.order(id: :desc), items:3)
   end
 
   def show

@@ -6,5 +6,7 @@
       <%= link_to task.id, task %> : <%= task.status %> &gt; <%= task.content %></li>
   <% end %>
 </ul>
+<%== pagy_nav(@pagy) %>
+
 
 <%= link_to '新規タスク作成', new_task_path %>
