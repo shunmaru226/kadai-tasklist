@@ -60,6 +60,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    bcrypt (3.1.20)
     bindex (0.8.1)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
@@ -67,7 +68,9 @@ GEM
     byebug (11.1.3)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
-    date (3.3.3)
+    date (3.3.4)
+    dockerfile-rails (1.5.12)
+      rails (>= 3.0.0)
     erubi (1.12.0)
     ffi (1.16.3)
     globalid (1.2.1)
@@ -80,7 +83,7 @@ GEM
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.21.4)
+    loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
@@ -94,19 +97,20 @@ GEM
     minitest (5.20.0)
     msgpack (1.7.2)
     mysql2 (0.5.5)
-    net-imap (0.4.4)
+    net-imap (0.4.5)
       date
       net-protocol
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.2.1)
+    net-protocol (0.2.2)
       timeout
     net-smtp (0.4.0)
       net-protocol
-    nio4r (2.5.9)
-    nokogiri (1.15.4-x86_64-linux)
+    nio4r (2.6.0)
+    nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
     pagy (6.2.0)
+    pg (1.5.4)
     puma (5.6.7)
       nio4r (~> 2.0)
     racc (1.7.3)
@@ -158,7 +162,12 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
-    spring (4.1.1)
+    sentry-rails (5.13.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.13.0)
+    sentry-ruby (5.13.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+    spring (4.1.2)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -168,7 +177,7 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.3.0)
     tilt (2.3.0)
-    timeout (0.4.0)
+    timeout (0.4.1)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -179,7 +188,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webpacker (5.4.4)
+    webpacker (5.4.3)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
@@ -193,23 +202,28 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   byebug
+  dockerfile-rails (>= 1.5)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   mysql2 (~> 0.5)
   pagy
+  pg (>= 0.18, < 2.0)
   puma (~> 5.0)
   rails (~> 6.1.3, >= 6.1.3.1)
   sass-rails (>= 6)
+  sentry-rails (~> 5.13)
+  sentry-ruby (~> 5.13)
   spring
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
-  webpacker (~> 5.0)
+  webpacker (= 5.4.3)
 
 RUBY VERSION
-   ruby 3.2.2p53
+   ruby 3.1.4p223
 
 BUNDLED WITH
-   2.4.10
+   2.4.22
